@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './Navbar'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//pages
+import Home from './Home';
+import About from './About';
+import Error from './Error';
+import FormClass from './class-4';
+import UserDetails from './UserDetails';
+import EffectClass from './Effect'
+
+
+const App = () => {
+    return (
+        <>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/users">
+                        <FormClass />
+                    </Route>
+                    <Route path="/effect-class">
+                        <EffectClass />
+                    </Route>
+
+                    <Route path="/user/:name" children={<UserDetails />}></Route>
+
+                    <Route path="*">
+                        <Error />
+                    </Route>
+                </Switch>
+            </Router>
+            {/* <Navbar /> */}
+        </>
+    )
 }
 
 export default App;
