@@ -8,7 +8,9 @@ import About from './About';
 import Error from './Error';
 import FormClass from './class-4';
 import UserDetails from './UserDetails';
-import EffectClass from './Effect'
+import EffectClass from './Effect';
+import ContextClass from './ContextClass';
+import ReducerClass from './ReducerClass';
 
 
 const App = () => {
@@ -28,6 +30,12 @@ const App = () => {
                     </Route>
                     <Route path="/effect-class">
                         <EffectClass />
+                    </Route>
+                    <Route path="/context-class">
+                        <ContextClass />
+                    </Route>
+                    <Route path="/reducer-class">
+                        <ReducerClass />
                     </Route>
 
                     <Route path="/user/:name" children={<UserDetails />}></Route>
