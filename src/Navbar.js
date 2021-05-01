@@ -8,6 +8,9 @@ const Navbar = () => {
                 <span className="navbar-brand">REACT CLASS</span>
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
+                        <Link to="/dashboard" className="nav-link">Dashboard</Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to="/" className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item">
